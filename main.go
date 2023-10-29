@@ -10,6 +10,6 @@ func main() {
 	r := gin.Default()
 
 	config.SetupDatabase()
-	routes.SetupDataRoutes(r.Group("/data"))
+	routes.SetupDataRoutes(r.Group("/studentdata"))
 	r.Run(":8080")
 }
