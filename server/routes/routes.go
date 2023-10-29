@@ -8,8 +8,8 @@ import (
 func SetupDataRoutes(r *gin.RouterGroup) {
 	dataRoutes := r.Group("/data")
 	{
-		dataRoutes.POST("/", handlers.InsertData)
-		dataRoutes.GET("/", handlers.ViewAllData)
+		dataRoutes.POST("/insert", handlers.InsertData)
+		dataRoutes.GET("/view", handlers.ViewAllData)
 		dataRoutes.PUT("/:name", handlers.UpdateScore)
 		dataRoutes.DELETE("/:name", handlers.DeleteRecord)
 	}
