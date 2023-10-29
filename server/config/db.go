@@ -18,5 +18,5 @@ func SetupDatabase() {
 		panic("Failed to connect to database")
 	}
 	DB = db
-	DB.AutoMigrate(&models.SATResult{})
+	DB.AutoMigrate(&models.ScoreCard{})
 }
