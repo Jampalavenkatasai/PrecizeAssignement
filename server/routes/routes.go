@@ -10,6 +10,7 @@ func SetupDataRoutes(r *gin.RouterGroup) {
 	{
 		dataRoutes.POST("/insert", handlers.InsertData)
 		dataRoutes.GET("/view", handlers.ViewAllData)
+		dataRoutes.GET("/rank", handlers.GetRankStudent)
 		dataRoutes.PUT("/updatescore", handlers.UpdateScore)
 		dataRoutes.DELETE("/deletevalues", handlers.DeleteRecord)
 	}

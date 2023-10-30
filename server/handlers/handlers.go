@@ -58,3 +58,17 @@ func DeleteRecord(c *gin.Context) {
 	config.DB.Delete(&data)
 	c.Status(http.StatusNoContent)
 }
+func GetRankStudent(c *gin.Context) {
+	name := c.Param("name")
+
+	var result models.ScoreCard
+	if err := config.DB.Where("name = ?", name).First(&result).Error; err != nil {
+		c.JSON(404, gin.H{"error": "Record not found"})
+		return
+	}
+
+	var rank int64
+	config.DB.Model(&models.ScoreCard{}).Where("SATScore > ?", result.SATScore).Count(&rank)
+
+	c.JSON(200, gin.H{"name": name, "rank": rank + 1})
+}
