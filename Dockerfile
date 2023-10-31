@@ -17,8 +17,8 @@ COPY . .
 # Build the Go application
 RUN go build -o scorecard-go
 
-# Expose the port that your application listens on (replace with your application's port)
+# Expose the port that  application listens on (replace with your application's port)
 EXPOSE 8080
 
-# Set the command to run your Go application
+# Set the command to run  Go application
 CMD ["./scorecard-go"]

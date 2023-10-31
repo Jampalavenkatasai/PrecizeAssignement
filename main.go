@@ -11,6 +11,5 @@ func main() {
 
 	config.SetupDatabase()
 	routes.SetupDataRoutes(r.Group("/studentdata"))
-
 	r.Run(":8080")
 }
